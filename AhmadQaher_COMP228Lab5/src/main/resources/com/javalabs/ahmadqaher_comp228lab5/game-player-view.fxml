@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.javalabs.ahmadqaher_comp228lab5.GamePlayerController">
+    <VBox spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+        <VBox spacing="10">
+            <Label text="Create New Game and Add Players"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Game Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="gameTitleTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Number of Players:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="numberOfPlayersTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button text="Create Game" onAction="#createGame" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+            <VBox fx:id="playerInputContainer" spacing="10"/>
+        </VBox>
+
+        <Separator/>
+
+        <VBox spacing="10">
+            <Label text="Search Player Games"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Search Player by First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="searchFirstNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Search Player by Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="searchLastNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button text="Search Players' Games" onAction="#searchPlayerGames" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+            <TableView fx:id="playerGamesTableView">
+                <columns>
+                    <TableColumn text="First Name" fx:id="firstNameColumn"/>
+                    <TableColumn text="Last Name" fx:id="lastNameColumn"/>
+                    <TableColumn text="Game Title" fx:id="gameTitleColumn"/>
+                    <TableColumn text="Playing Date" fx:id="playingDateColumn"/>
+                    <TableColumn text="Score" fx:id="scoreColumn"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <Separator/>
+
+        <VBox spacing="10">
+            <Label text="Search Game Players"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Search Game Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="searchGameTitleTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button text="Search Game Players" onAction="#searchGamePlayers" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+            <TableView fx:id="gamePlayersTableView">
+                <columns>
+                    <TableColumn text="Game Title" fx:id="gameSearchTitleColumn"/>
+                    <TableColumn text="First Name" fx:id="gamePlayerFirstNameColumn"/>
+                    <TableColumn text="Last Name" fx:id="gamePlayerLastNameColumn"/>
+                    <TableColumn text="Playing Date" fx:id="gamePlayerPlayingDateColumn"/>
+                    <TableColumn text="Score" fx:id="gamePlayerScoreColumn"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</ScrollPane>
